@@ -53,3 +53,35 @@ searchForm.addEventListener('submit', (event) => {
 
   bowerSearch(searchTerm);
 });
+
+
+function sortTable() {
+  var filterTable, rows, sorted, i, x, y, sortFlag;
+  filterTable = document.querySelector(".filterTable");
+  sorted = true;
+  while (sorted) {
+     sorted = false;
+     rows = filterTable.rows;
+     for (i = 1; i < rows.length - 1; i++) {
+        sortFlag = false;
+        x = rows[i].getElementsByTagName("TD")[0];
+        y = rows[i + 1].getElementsByTagName("TD")[0];
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+           sortFlag = true;
+           break;
+        }
+     }
+     if (sortFlag) {
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        sorted = true;
+     }
+  }
+}
+
+const btn = document.querySelector('button.sort-btn')
+btn.addEventListener('click', (event) => {
+  // Stop the default behavior: reload the page/navigate!
+  event.preventDefault();
+
+  sortTable();
+});

@@ -59,13 +59,15 @@
         <button class="search-btn btn btn-outline-success" type="submit">Search</button>
       </form>
 
-      <div class="table-responsive">
-        <table class="table">
+      <button class="sort-btn btn btn-primary btn-sm mt-3">Sort by name</button>
+
+      <div class="table-responsive" id="result-list">
+        <table class="filterTable table">
           <thead>
             <tr>
               <th scope="col">Name</th>
               <th scope="col">Latest Release Number</th>
-              <th scope="col">Stars</th>
+              <th scope="col" class="js-sort-number">Stars</th>
             </tr>
           </thead>
           <tbody id="results">
