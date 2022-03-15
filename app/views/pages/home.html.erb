@@ -1,2 +1,67 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# Navbar %>
+<nav>
+  <ul>
+    <li><a href="#">Docs</a></li>
+    <li><a href="#">Search Packages</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Stats</a></li>
+  </ul>
+</nav>
+
+<%# Header %>
+<div class="header">
+  <i class="search-icon fas fa-search"></i>
+  <h1 class="header-title">Package Search</h1>
+</div>
+
+
+<div class="container my-3">
+  <div class="row mb-5">
+    <div class="col-md-4">
+      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span>Menu</span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+              <ul class="list-group"> <li class="nav-item active">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Creating Packages</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">API</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Configuration</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Pluggable Resolvers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Tools</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                </li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+    <div class="col-md-8">
+       <form class="d-flex" id="search-form">
+        <input class="form-control me-2" id="search-input" type="search" id="click-Me" placeholder="Search" aria-label="Search">
+        <button class="search-btn btn btn-outline-success" type="submit">Search</button>
+      </form>
+
+      <div id="results">
+      </div>
+    </div>
+  </div>
+</div>

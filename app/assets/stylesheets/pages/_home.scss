@@ -1,1 +1,25 @@
 // Specific CSS for your home-page
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+p, a, li {
+  font-family: $body-font;
+  color: black;
+  text-decoration: none;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headers-font;
+}
+
+.col-md-4 {
+  border: 1px solid black;
+}
+
+.col-md-8 {
+  border: 1px solid black;
+}
