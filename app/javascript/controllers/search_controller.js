@@ -19,16 +19,15 @@ const bowerSearch = (searchTerm) => {
       const results = json.slice(0, 5);
       results.forEach((result) => {
         console.log(result.name);
+        console.log(result.latest_release_number);
         console.log(result.stars);
         // build a little HTML snippet using the info we found
         const html = `
-          <ul>
-          <li class="list-inline-item">
-            <p>${result.name}</p>
-            <p>${result.stars}</p>
-            <p>${result.repository_url}</p>
-          </li>
-          <ul>
+        <tr>
+          <td>${result.name}</td>
+          <td>${result.latest_release_number}</td>
+          <td>${result.stars}</td>
+        </tr>
         `;
 
         const list = document.querySelector('#results');
