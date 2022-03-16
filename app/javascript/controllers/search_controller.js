@@ -55,33 +55,56 @@ searchForm.addEventListener('submit', (event) => {
 });
 
 
-function sortTable() {
-  var filterTable, rows, sorted, i, x, y, sortFlag;
-  filterTable = document.querySelector(".filterTable");
-  sorted = true;
-  while (sorted) {
-     sorted = false;
-     rows = filterTable.rows;
-     for (i = 1; i < rows.length - 1; i++) {
-        sortFlag = false;
-        x = rows[i].getElementsByTagName("TD")[0];
-        y = rows[i + 1].getElementsByTagName("TD")[0];
-        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-           sortFlag = true;
-           break;
+function table_sort() {
+  const styleSheet = document.createElement('style')
+  styleSheet.innerHTML = `
+        .order-inactive span {
+            visibility:hidden;
         }
-     }
-     if (sortFlag) {
-        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-        sorted = true;
-     }
-  }
+        .order-inactive:hover span {
+            visibility:visible;
+        }
+        .order-active span {
+            visibility: visible;
+        }
+    `
+  document.head.appendChild(styleSheet)
+
+  document.querySelectorAll('th.order').forEach(th_elem => {
+    let asc = true
+    const span_elem = document.createElement('span')
+    span_elem.style = "font-size:0.8rem; margin-left:0.5rem"
+    span_elem.innerHTML = "▼"
+    th_elem.appendChild(span_elem)
+    th_elem.classList.add('order-inactive')
+
+    const index = Array.from(th_elem.parentNode.children).indexOf(th_elem)
+    th_elem.addEventListener('click', (e) => {
+      document.querySelectorAll('th.order').forEach(elem => {
+        elem.classList.remove('order-active')
+        elem.classList.add('order-inactive')
+      })
+      th_elem.classList.remove('order-inactive')
+      th_elem.classList.add('order-active')
+
+
+      if (!asc) {
+        th_elem.querySelector('span').innerHTML = '▲'
+      } else {
+        th_elem.querySelector('span').innerHTML = '▼'
+      }
+      const arr = Array.from(th_elem.closest("table").querySelectorAll('tbody tr'))
+      arr.sort((a, b) => {
+        let a_val = a.children[index].innerText
+        let b_val = b.children[index].innerText
+        return (asc) ? a_val.localeCompare(b_val, 'en', {numeric: true}) : b_val.localeCompare(a_val, 'en', {numeric: true})
+      })
+      arr.forEach(elem => {
+        th_elem.closest("table").querySelector("tbody").appendChild(elem)
+      })
+      asc = !asc
+    })
+  })
 }
 
-const btn = document.querySelector('button.sort-btn')
-btn.addEventListener('click', (event) => {
-  // Stop the default behavior: reload the page/navigate!
-  event.preventDefault();
-
-  sortTable();
-});
+table_sort()
