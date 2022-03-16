@@ -1,30 +1,42 @@
 nav {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  background: $green;
+  background: $purple;
 }
 
-nav ul {
+nav {
+  ul {
   display: flex;
+  justify-content: center;
   list-style: none;
   padding: 0rem 0rem;
   margin-bottom: 0px;
-}
+  }
 
-nav a {
-  text-decoration: none;
-  color: #57467B;
-  font-weight: 600;
-}
+  a {
+    text-decoration: none;
+    color: $beige;
+    font-weight: 600;
+  }
 
-nav li {
-  margin: 1rem;
+  a:hover {
+    border-radius: 10px;
+    background-color: white;
+    color: $purple;
+    padding: 10px;
+    transition: 0.5s;
+  }
+
+  li {
+    margin: 1rem;
+  }
 }
 
 .header {
   width: 100%;
   height: 20vh;
-  background-color: $green;
+  background-color: $purple;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,11 +45,13 @@ nav li {
 .header-title {
   font-size: 65px;
   font-weight: 900;
+  color: $beige;
 }
 
 .search-icon {
   font-size: 60px;
   font-weight: 700;
+  color: $beige;
 }
 
 /*Media Queries*/

@@ -1,51 +1,51 @@
 <%# Navbar %>
 <nav>
   <ul>
-    <li><a href="#">Docs</a></li>
-    <li><a href="#">Search Packages</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#">Stats</a></li>
+    <li><a href="<%= root_path %>">Docs</a></li>
+    <li><a href="<%= root_path %>">Search Packages</a></li>
+    <li><a href="<%= root_path %>">Blog</a></li>
+    <li><a href="<%= root_path %>">Stats</a></li>
   </ul>
+<div class="header">
+  <i class="search-icon fas fa-search"></i>
+  <h1 class="header-title">ModuleSearch</h1>
+</div>
 </nav>
 
 <%# Header %>
-<div class="header">
-  <i class="search-icon fas fa-search"></i>
-  <h1 class="header-title">Package Search</h1>
-</div>
 
 
 <div class="container my-3">
   <div class="row mb-5">
     <div class="col-md-4">
       <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container-fluid justify-content-center">
+          <button class="navbar-toggler search-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span>Menu</span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto">
               <ul class="list-group"> <li class="nav-item active">
-                  <a class="nav-link" href="#">Home</a>
+                  <a class="nav-link" href="<%= root_path %>">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Creating Packages</a>
+                  <a class="nav-link" href="<%= root_path %>">Creating Packages</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">API</a>
+                  <a class="nav-link" href="<%= root_path %>">API</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Configuration</a>
+                  <a class="nav-link" href="<%= root_path %>">Configuration</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Pluggable Resolvers</a>
+                  <a class="nav-link" href="<%= root_path %>">Pluggable Resolvers</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Tools</a>
+                  <a class="nav-link" href="<%= root_path %>">Tools</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link" href="<%= root_path %>">About</a>
                 </li>
               </ul>
             </ul>
@@ -56,18 +56,16 @@
     <div class="col-md-8">
        <form class="d-flex" id="search-form">
         <input class="form-control me-2" id="search-input" type="search" id="click-Me" placeholder="Search" aria-label="Search">
-        <button class="search-btn btn btn-outline-success" type="submit">Search</button>
+        <button class="search-btn" type="submit">Search</button>
       </form>
 
-      <button class="sort-btn btn btn-primary btn-sm mt-3">Sort by name</button>
-
-      <div class="table-responsive" id="result-list">
-        <table class="filterTable table">
+      <div class="table-responsive mt-4" id="result-list">
+        <table class="table">
           <thead>
             <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Latest Release Number</th>
-              <th scope="col" class="js-sort-number">Stars</th>
+              <th scope="col" class="order">Name</th>
+              <th scope="col" class="order">Latest Release Number</th>
+              <th scope="col" class="order">Stars</th>
             </tr>
           </thead>
           <tbody id="results">
@@ -77,3 +75,14 @@
     </div>
   </div>
 </div>
+
+<%# Footer %>
+ <div class="footer">
+
+    <a href="https://de-de.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+
+    <a href="https://github.com/michellsi" target="_blank"><i class="fab fa-github-square"></i></a>
+
+    <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>
+
+  </div>

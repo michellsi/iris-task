@@ -1,0 +1,17 @@
+.search-btn {
+  color: $purple;
+  border-radius: 0.25rem;
+  width: 80px;
+  font-weight: 600;
+  border: 2px solid $purple;
+  letter-spacing: 0.7px;
+  background-color: transparent;
+}
+
+.search-btn:hover {
+  font-weight: 800;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 0.5s ease-in-out;
+  background-color: $purple;
+  color: $beige;
+}
