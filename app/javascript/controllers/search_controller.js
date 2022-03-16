@@ -5,7 +5,7 @@ button.addEventListener('submit', (e) => {
   console.log(clickedButton);
 });
 
-// fetch - Bower
+// Fetch - Bower
 
 const bowerSearch = (searchTerm) => {
     const url = `https://libraries.io/api/bower-search?q=${searchTerm}`;
@@ -30,7 +30,7 @@ const bowerSearch = (searchTerm) => {
         `;
 
         const list = document.querySelector('#results');
-        
+
         // Insert the snippet into the existing DOM on the page
         list.insertAdjacentHTML('beforeend', html);
       });
