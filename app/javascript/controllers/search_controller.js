@@ -18,11 +18,8 @@ const bowerSearch = (searchTerm) => {
       // Break into the JSON to find the pieces we need
       const results = json;
       results.forEach((result) => {
-        console.log(result.name);
-        console.log(result.latest_release_number);
-        console.log(result.stars);
-        console.log(result.homepage);
         const homepage_url = result.homepage !== null ? result.homepage : '#'
+
         // Build HTML snippet using the info
         const html = `
         <tr>
@@ -33,6 +30,7 @@ const bowerSearch = (searchTerm) => {
         `;
 
         const list = document.querySelector('#results');
+        
         // Insert the snippet into the existing DOM on the page
         list.insertAdjacentHTML('beforeend', html);
       });
@@ -54,6 +52,8 @@ searchForm.addEventListener('submit', (event) => {
 
   bowerSearch(searchTerm);
 });
+
+
 
 // Sorting method
 function table_sort() {

@@ -5,7 +5,13 @@
   margin: 0;
 }
 
-p, a, li {
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body, p, a, li {
   font-family: $body-font;
   color: black;
   text-decoration: none;
@@ -14,12 +20,4 @@ p, a, li {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $headers-font;
-}
-
-.col-md-4 {
-  border: 1px solid black;
-}
-
-.col-md-8 {
-  border: 1px solid black;
 }

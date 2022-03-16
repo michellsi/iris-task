@@ -1,0 +1,11 @@
+.navbar-light .navbar-nav .nav-link {
+  color: $peach;
+  font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: $peach;
+  background: #e9afa33b;
+  border-radius: 5px;
+  transition: 0.5s ease-out;
+}
