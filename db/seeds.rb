@@ -1,7 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require "faker"
+
+modules = ["npm", "faker", "yarn", "faker-import", "angular-jsf", "react-modal", "react-bootstrap-master", "bootstrap", "fontawesome",
+           "jQuery", "reveal.js", "chartjs", "rails-turbolinks", "websocket-rails", "sql-parser", "json5", "angular-xml", "react", "javascript",
+           "bokeh", "linux", "ng-csv", "font-awesome-sass", "vue", "lodash", "stimulus", "clipboard", "mocha", "prism", "redux"]
+
+30.times do
+  Item.create!(name: modules.shuffle!.pop, release_date: Faker::Internet.username, stars: Faker::Number.between(from: 1, to: 500))
+end
