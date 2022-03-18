@@ -5,5 +5,5 @@ modules = ["npm", "faker", "yarn", "faker-import", "angular-jsf", "react-modal",
            "bokeh", "linux", "ng-csv", "font-awesome-sass", "vue", "lodash", "stimulus", "clipboard", "mocha", "prism", "redux"]
 
 30.times do
-  Item.create!(name: modules.shuffle!.pop, release_date: Faker::Internet.username, stars: Faker::Number.between(from: 1, to: 500))
+  Item.create!(name: modules.shuffle!.pop, owner: Faker::Internet.username, stars: Faker::Number.between(from: 1, to: 500))
 end

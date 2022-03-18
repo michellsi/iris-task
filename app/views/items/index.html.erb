@@ -67,16 +67,16 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col" class="order">Name</th>
-              <th scope="col" class="order">Owner</th>
-              <th scope="col" class="order">Stars</th>
+              <th><%= link_to "Name", :sort => "name"%> </th>
+              <th><%= link_to "Owner", :sort => "owner"%> </th>
+              <th><%= link_to "Stars", :sort => "stars"%> </th>
             </tr>
           </thead>
           <tbody id="results">
             <% @items.each do |i| %>
             <tr>
               <td><%= i.name %></td>
-              <td><%= i.release_date %></td>
+              <td><%= i.owner %></td>
               <td><%= i.stars %></td>
             <% end %>
             </tr>
