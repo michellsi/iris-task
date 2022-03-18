@@ -54,21 +54,32 @@
       </div>
     <%# Search form and search results %>
     <div class="col-md-8">
-       <form class="d-flex" id="search-form">
-        <input class="form-control me-2" id="search-input" type="search" id="click-Me" placeholder="Search" aria-label="Search">
-        <button class="search-btn" type="submit">Search</button>
-      </form>
+       <%= simple_form_for :search, url: root_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search for module"
+        %>
+        <%= submit_tag "Search", class: "search-btn" %>
+      <% end %>
 
       <div class="table-responsive mt-4" id="result-list">
         <table class="table">
           <thead>
             <tr>
               <th scope="col" class="order">Name</th>
-              <th scope="col" class="order">Latest Release Number</th>
+              <th scope="col" class="order">Owner</th>
               <th scope="col" class="order">Stars</th>
             </tr>
           </thead>
           <tbody id="results">
+            <% @items.each do |i| %>
+            <tr>
+              <td><%= i.name %></td>
+              <td><%= i.release_date %></td>
+              <td><%= i.stars %></td>
+            <% end %>
+            </tr>
           </tbody>
         </table>
       </div>
