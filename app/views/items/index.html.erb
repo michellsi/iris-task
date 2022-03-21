@@ -63,25 +63,41 @@
         <%= submit_tag "Search", class: "search-btn" %>
       <% end %>
 
-      <div class="table-responsive mt-4" id="result-list">
+      <div class="table-responsive-md mt-4" id="result-list">
         <table class="table">
           <thead>
             <tr>
-              <th><%= link_to "Name", :sort => "name"%> </th>
-              <th><%= link_to "Owner", :sort => "owner"%> </th>
-              <th><%= link_to "Stars", :sort => "stars"%> </th>
+              <th style="width: 40%;"><%= link_to "Name", :sort => "name"%> </th>
+              <th style="width: 30%;"><%= link_to "Owner", :sort => "owner"%> </th>
+              <th style="width: 30%;"><%= link_to "Stars", :sort => "stars"%> </th>
             </tr>
           </thead>
           <tbody id="results">
             <% @items.each do |i| %>
             <tr>
-              <td><%= i.name %></td>
+              <td class="row"><%= i.name %></td>
               <td><%= i.owner %></td>
               <td><%= i.stars %></td>
             <% end %>
             </tr>
           </tbody>
         </table>
+
+        <%# Paging feature %>
+          <div style="text-align: center;">
+            <% if @items.count >= 5 %>
+              <% if @page >= 1 %>
+                <%= link_to root_path(page: @page - 1) do %>
+                  <i class="page-btn fas fa-angle-double-left"></i>
+                <% end %>
+              <% end %>
+              <%= link_to root_path(page: @page + 1) do %>
+                  <i class="page-btn fas fa-angle-double-right"></i>
+              <% end %>
+            <% else %>
+              <%= link_to "Show all results", root_path, style: "font-weight: bold;" %>
+            <% end %>
+          </div>
       </div>
     </div>
   </div>

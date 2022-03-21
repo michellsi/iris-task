@@ -15,3 +15,18 @@
   background-color: $purple;
   color: $beige;
 }
+
+.page-btn {
+  background-color: $orange;
+  padding: 0.5em 0.6em;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+.page-btn:hover {
+  opacity: 1;
+}
+
+i.page-btn {
+  color: $black;
+}
